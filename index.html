@@ -1,0 +1,1534 @@
+<?php include 'codigosphp.php';?>
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseX</title>
+
+  <!--  ATUALIZAR COM INFORMAÇÕES DE SEO -->
+
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:image" content="assets1/img/meta.png" />
+
+  <!--  FIM SEO -->
+  
+  <script>
+    /*// Set the date we're counting down to
+    var countDownDate = new Date("Jan 5, 2025 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="isthatClock"
+      document.getElementById("isthatClock1").innerHTML = minutes + "min e " + seconds + "s";
+      document.getElementById("isthatClock2").innerHTML = seconds;
+
+      // If the count down is over, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("isthatClock1").innerHTML = "EXPIRED";
+        document.getElementById("isthatClock2").innerHTML = "EXPIRED";
+      }
+    }, 1000);*/
+	function startTimer(duration, display) {
+		var timer = duration, minutes, seconds;
+		setInterval(function () {
+			minutes = parseInt(timer / 60, 10);
+			seconds = parseInt(timer % 60, 10);
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+			seconds = seconds < 10 ? "0" + seconds : seconds;
+			display.textContent = minutes + "min e " + seconds + "s";
+			if (--timer < 0) {
+				timer = duration;
+			}
+		}, 1000);
+	}
+	window.onload = function () {
+		var duration = 60 * 10; // Converter para segundos
+        display = document.querySelector('#isthatClock1'); // selecionando o timer
+		startTimer(duration, display); // iniciando o timer
+	};
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+  <!--<link rel="stylesheet" type="text/css" media="screen" href="./assets1/icons/fontawesome/css/all.min.css" />-->
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets1/css/uikit.min.css" />
+  <script src="assets1/js/uikit.min.js"></script>
+  <script src="assets1/js/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <link rel="shortcut icon" href="assets1/img/favicon.png" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!--<link rel="stylesheet" type="text/css" media="screen"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />-->
+  <!--<link rel="stylesheet" type="text/css" media="screen" href="assets1/icons/fontawesome/css/all.min.css" />-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <link rel="stylesheet" href="assets1/owlcarousel/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets1/owlcarousel/css/owl.theme.default.min.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="assets1/css/util.css" />
+  <link rel="stylesheet" href="assets1/css/style.css" />
+  <link href="assets1/css/responsive.css" rel="stylesheet" />
+
+  <script src="assets1/js/modernizr.js"></script>
+  <!-- Modernizr -->
+
+  
+  <script src="https://kit.fontawesome.com/ea1ac0f14c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="hero">
+    <!-- Image and text -->
+    <!--<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">-->
+      <div class="container" >
+        <div class="row justify-content-center">
+        <a class="navbar-brand" href="#">
+          <img src="assets1/img/id/LogoHorizontal@3x.png" class="logo-nav" class="d-inline-block align-top" alt="" />
+        </a>
+        </div>
+
+        <!--<button class="navbar-toggler navbutton" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="ml-auto navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#beneficios">Benefícios</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link" href="#depoimentos">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-especial" href="#ofertas">Compre já!</a>
+            </li>
+          </ul>
+        </div>
+        -->
+      </div>
+    <!--</nav>-->
+    <div class="container">
+      <div class="hero-content">
+        <div class="row align-items-center justify-content-center text-white">
+          <div class="half"></div>
+          <h1 class="title-hero theme-white">EU NÃO AGUENTAVA NEM <span class="bolder theme-red">2 MINUTOS</span> NA CAMA <span class="bolder theme-red">ATÉ ASSISTIR</span> ESSE VÍDEO</h1>
+          <div class="doublefix"></div>
+
+          <div id="vid_62debd20a5f18e000b633a06" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_62debd20a5f18e000b633a06" src="https://images.converteai.net/4120d333-2ac6-4ab6-9958-cc28fc688113/players/62debd20a5f18e000b633a06/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_62debd20a5f18e000b633a06" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_62debd20a5f18e000b633a06">var s=document.createElement("script");s.src="https://scripts.converteai.net/4120d333-2ac6-4ab6-9958-cc28fc688113/players/62debd20a5f18e000b633a06/player.js",s.async=!0,document.head.appendChild(s);</script>
+          <div class="half"></div> 
+          <div class="som"> <img src="assets1/img/audio.svg"> Por favor, verifique se o seu som está ligado!</div> 
+          <div class="half"></div> 
+          <a href="#ofertas" class="pulsingButton1 btn btn-green" id="botaocheckout"><i class="fa fa-check-circle mr-2"
+                aria-hidden="true"></i>EU QUERO MINHA PULSEX AGORA!</a>
+
+          
+          <img src="assets1/img/barra-compra-segura-1-1-1.png" width="250px" alt="" id="comprasegura">
+          
+          <!--<div class="doublefix"></div>
+          <div class="doublefix"></div>
+          <div class="doublefix"></div>
+
+          <div class="col-lg-6 text-center text-lg-left order-2 order-md-1" data-aos="fade-up">
+            <h1 class="title-hero theme-white">O ESTÍMULO QUE <span class="bolder theme-red">FALTAVA EM VOCÊ!</span>
+            </h1>
+            <div class="clearfix"></div>
+            <h4 class="subtitle is-size-5 has-text-centered-mobile has-text-white theme-white">REDUZ A EJACULAÇÃO
+              PRECOCE E GARANTE EREÇÕES FORTES!</h4>
+            <div class="clearfix"></div>
+            <ul class="list-hero">
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Maior apetite sexual</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Orgasmos prolongados</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Maior prazer e desempenho</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Orgasmos longos e potentes</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Prolonga a ereção ao máximo</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Crescimento rápido e natural</li>
+            </ul>
+
+
+
+
+
+
+            <a href="#ofertas" class="pulsingButton1 btn btn-primary mb-m rounded"><i class="fa fa-check-circle mr-2"
+                aria-hidden="true"></i>Sim, eu quero experimentar!</a>
+            <br>
+            <img src="assets1/img/barra-compra-segura-1-1-1.png" width="250px" alt="">
+            <div class="clearfix"></div>
+
+
+
+          </div>
+
+          <div class="col-lg-6 order-1 order-md-2 text-center">
+            <img src="assets1/img/gel1.png" class="less-top mb-m img-hero" data-aos="fade-up" alt="" />
+          </div>-->
+
+        </div>
+      </div>
+    </div>
+    <div class="doublefix"></div>
+    <div class="linha-red"></div>
+
+
+
+  </header>
+
+  <section class=" bg-black text-white" id="elonmusk">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12 text-center" data-aos="fade-up">
+            <h1 class="bolder theme-white">O Criador da PulseX&trade;</h1>
+            <div class="doublefix"></div>
+            <img src="assets1/img/elon-musk.png" width="100%" alt="">
+        
+            <div class="doublefix"></div>
+            <p>Elon Musk, O criador da PulseX, O Homem Mais Rico Do Mundo, Dono da Tesla e da SpaceX, fez a PulseX&trade; com um objetivo: salvar a vida de milhares de americanos que destroem sua saúde todos os anos com remédios para tentar resolver seus problemas sexuais, o que muitas vezes nem se quer ajudavam em nada além de encher os bolsos da indústria farmacêutica.</p><br>
+            <p>Mas a pulseira PulseX&trade; Magnética 4000ions melhora eficientemente o tamanho do pênis, retarda a ejaculação, aumenta a sensação de amor e paixão e ajuda os homens a durar mais tempo na cama de forma efetiva e comprovada, graças ao efeito das pedras magnéticads turmalinas de 4000 íons de alta qualidade.</p><br>
+            <p>E ainda, graças a tecnologia BIO-ACT, a PulseX&trade; também reduz a inflamação, fortalece saúde do coração, ajuda na digestão, diminui a pressão arterial, desintoxica o corpo, alivia o estresse e aumenta o sistema imunológico. Isto é: saúde e pontência para sua vida!</p><br>
+            <p>"Estou muito feliz que na pré venda as 30 milhões de unidades que disponibilizei acabaram em minutos. Muitas pessoas no Twitter estão dizendo que sou "o cara", mas, na verdade, eu só quero ajudar, e agora espero poder ajudar a todos os homens ao redor do mundo."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="linha-red"></div>
+  </section>
+
+  
+
+  <section class=" bg-black text-white" id="composicao">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12 text-center" data-aos="fade-up">
+            <h1 class="bolder theme-white">Composição</h1>
+            <div class="doublefix"></div>
+            <img src="assets1/img/pulseira.png" width="100%" alt="">
+          </div>
+          <div class="doublefix"></div>
+          <div class="card shadow bg-red1 p-30 w-100" data-aos="fade-right">
+              <div class="row align-items-center justify-content-left">
+                <p><i class="fa fa-circle-right theme-white mr-2" aria-hidden="true"></i><b>íon Negativo</b> - Os íons negativos são átomos benéficos para o corpo humano.</p>
+                <div class="half"></div>
+                <p><i class="fa fa-circle-right theme-white mr-2" aria-hidden="true"></i><b>Infravermelho longo</b> - De acordo com um artigo da Universidade Harvard, o infravermelho longo, também conhecido pela sigla IVL, é uma energia natural que emite uma faixa de frequência específica, ou seja, de 2 a 14 μm (mícrons).</p>
+                <div class="half"></div>
+                <p><i class="fa fa-circle-right theme-white mr-2" aria-hidden="true"></i>Germânio - Germânio é o milagre da cura de doenças. Então, devemos afirma que o germânio é indicado no tratamento de várias doenças</p>
+                <div class="half"></div>
+                <p><i class="fa fa-circle-right theme-white mr-2" aria-hidden="true"></i>NeodyMium Magnético - um elemento químico que é considerado um ingrediente essencial em muitas das tecnologias que usamos hoje, como smartwatch e flexavision.</p>
+                <div class="half"></div>
+                <p><i class="fa fa-circle-right theme-white mr-2" aria-hidden="true"></i>Pedras Turmalina Magnética - O principal uso da turmalina é no setor imunológico, onde é considerada uma pedra preciosa mas por ter seus polos ionizados facilmente, a turmalina também é muito usada em tratamentos de disfunção erétil.</p>
+                <div class="half"></div>
+              </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+          <div class="doublefix"></div>
+          <div class="col-lg-6 text-center text-lg-center mt-m" data-aos="fade-up" data-aos-duration="1000">
+            <img src="assets1/img/pulseira2.png" width="100%" alt="">
+          </div>
+          <div class="col-lg-6 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+            
+            <ul class="list-hero">
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Aumenta o Tamanho e a Espessura Do Pênis</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Combate a Impotência Sexual</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Aumenta o Prazer e o Desempenho</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Orgasmos mais Longos e Potentes</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Prolonga a ereção ao máximo</li>
+              <li><i class="fa fa-check-circle theme-red mr-2" aria-hidden="true"></i> Crescimento rápido e natural</li>
+            </ul>
+          </div>
+        </div>
+        <div class="doublefix"></div>
+        <div class="row aling-items-center justify-content-center">
+          <div class="col-lg-6" data-aos="fade-right" >
+            <img src="assets1/img/ima.png" width="100%" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="linha-red"></div>
+  </section>
+
+  
+
+
+  <section class="garantia1 bg-black text-white" id="depoimentos">
+    <div class="wrapper">
+      <div class="container">
+
+
+        <h1 class="title-sec1 theme-white">Quem usou a <span class="bolder theme-red">PulseX&trade;,</span> Aprovou e Recomenda!
+        </h1>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="row align-items-start justify-content-center text-white">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+
+            <img src="assets1/img/depoimentos/dp1.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Tenho 51 anos e como de se esperar meu desempenho já não era o mesmo, minhas ereções eram fracas e até meu pinto encolheu. Estava com medo de comprar algum produto e não funcionar, mas para minha surpresa a PulseX é a melhor coisa que já comprei. Sexo agora é todo dia. Me sentindo um garotão! </p>
+            </br>
+            <h3 class=" theme-white">João P. - 51 anos</h3>
+          </div>
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <img src="assets1/img/depoimentos/dp2.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Eu e meu marido nos casamos há 8 anos. Passamos por tempos dificeis: ele começou a sofrer com disfunção erétil e não queria saber de mim. Quando tentávamos fazer amor ele broxava ou gozava muito rápido. Brigamos muito por isso... Então, procurando soluções, achei a PulseX e logo já comprei, quando entreguei para ele ficou super envergonhado, mas tudo isso acabou quando os resultados vieram: seu pênis ficou mais grosso e o desempenho ta 100% melhor. Agora nossa vida sexual está maravilhosa. Se deixar ele quer todos os dias, toda hora! </p>
+            </br>
+            <h3 class=" theme-white">Carla L. - 30 anos</h3>
+          </div>
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <img src="assets1/img/depoimentos/dp3.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Sempre tive o pênis grande e com ereções fortes, mas com o passar do tempo, idade e correria do dia a dia, comecei a notar que as ereções eram cada dia mais curtas e também notei uma diferença no tamanho do meu pinto. Foi ai que resolvi procurar um médico especialista e ai ele me indicou a Pulsex!! Meus problemas acabaram…rsrs Minhas ereções voltaram ao normal! Tem dia que parece que o pinto vai estourar de tão forte! E sem falar que tanto em tamanho como na grossura, ele ficou bem maior que antes. PulseX foi minha salvação! </p>
+            </br>
+            <h3 class=" theme-white">Lucas S. - 25 anos</h3>
+          </div>
+
+
+
+
+
+
+
+          <div class="container" id="depoimentos-botao">
+            <div class="text-center">
+              <a href="#ofertas" class="pulsingButton1 btn btn-green" ><i class="fa fa-check-circle mr-2"
+                  aria-hidden="true"></i>Eu quero esses resultados!</a>
+
+
+
+              <img src="assets1/img/barra-compra-segura-1-1-1.png" width="250px" alt="" >
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="linha-red"></div>
+  </section>
+
+   
+
+  <!--<section class=" bg-white text-black">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12 text-center" data-aos="fade-up">
+            <h2 class="bolder theme-black">TORO MAN É O SEGREDO PARA UMA <span class="theme-red">VIDA SEXUAL
+                PRAZEROSA</span></h2>
+            <div class="half"></div>
+            <h6><span class="ml-3 ml-0-m mt-m-10 text-oferta theme-black">Sabemos que para qualquer homem ter o pênis
+                menor do que os outros, com ereções fracas e desempenho ruim na cama, pode ser o fim de tudo. E é aí 
+                que nós entramos!O Toro Man é um produto desenvolvido com ingredientes naturais, que pode revolucionar a vida sexual de
+                qualquer homem e em qualquer idade.
+
+
+
+
+
+              </span></h6>
+          </div>
+
+          <div class="col-lg-8 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+
+            <div class="row align-items-start justify-content-center text-white">
+              <div class="col-lg-4 text-center" data-aos="fade-right">
+                <img src="assets1/img/penis.png" width="96px" alt="" />
+                <div class="half"></div>
+                <p class="lead theme-blackblue">Aumenta e deixa o pênis mais grosso. </p>
+              </div>
+              <div class="col-lg-4 text-center" data-aos="fade-right">
+                <img src="assets1/img/musculo.png" width="96px" alt="" />
+                <div class="half"></div>
+                <p class="lead theme-blackblue">Ereções prolongadas e poderosas. </p>
+              </div>
+
+
+
+
+
+
+              <div class="doublefix hidden-m"></div>
+
+              <div class="col-lg-4 text-center" data-aos="fade-right">
+                <img src="assets1/img/prazer.png" width="96px" alt="" />
+                <div class="half"></div>
+                <p class="lead theme-blackblue">Prazer nas alturas para você e para ela. </p>
+              </div>
+
+              <div class="col-lg-4 text-center" data-aos="fade-right">
+                <img src="assets1/img/libido.png" width="96px" alt="" />
+                <div class="half"></div>
+                <p class="lead theme-blackblue">Melhora o desempenho sexual. </p>
+              </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+
+            <img src="assets1/img/pote-hero.png" width="100%" alt="">
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>-->
+
+
+
+
+
+  <!--<section class="anvisa" id="beneficios">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row aling-items-center justify-content-center">
+          <div class="col-lg-10">
+            <div class="card shadow rounded text-dark p-50 text-center text-md-left">
+              <div class="row align-items-center">
+                <div class="row flex-column align-items-center justify-content-center text-white">
+                  <div class="col-lg-8 text-center">
+                    <h1 class="title-sec">Descubra agora os <span class="bolder theme-red"> benefícios de Toro Man</span>
+                    </h1>
+                  </div>
+
+                  <div class="doublefix"></div>
+                </div>
+
+                <div class="row align-items-start justify-content-center text-white">
+                  <div class="col-lg-4 text-center" data-aos="fade-up">
+                    <img src="assets1/img/aumento.gif" class="img-beneficio" width="100%" alt="" />
+                    <div class="half"></div>
+                    <p class="lead theme-blackblue">A fórmula avançada do Toro Man potencializa o desenvolvimento do seu
+                      pênis, promovendo um aumento de até 9cm de forma completamente natural. </p>
+                  </div>
+                  <div class="col-lg-4 text-center" data-aos="fade-up">
+                    <img src="assets1/img/reducao.gif" class="img-beneficio" width="100%">
+                    <div class="half"></div>
+                    <p class="lead theme-blackblue">Além de mais apetite e prazer, o Toro Man deixa você cheio de energia
+                      para aproveitar a noite toda sem parar. Para você usufruir ao máximo da sua nova potência sexual.
+                    </p>
+                  </div>
+
+
+
+
+
+
+                  <div class="doublefix hidden-m"></div>
+
+                  <div class="col-lg-4 text-center" data-aos="fade-up">
+                    <img src="assets1/img/erecoes.gif" class="img-beneficio" width="100%" alt="" />
+                    <div class="half"></div>
+                    <p class="lead theme-blackblue">Com apenas duas cápsulas de TORO MAN por dia, logo na primeira
+                      semana, você vai perceber uma evolução incrível no seu apetite sexual, na sua potência e na
+                      duração de suas ereções. </p>
+                  </div>
+
+                  <div class="col-lg-4 text-center" data-aos="fade-up">
+                    <img src="assets1/img/prazer.gif" class="img-beneficio" width="100%" alt="" />
+                    <div class="half"></div>
+                    <p class="lead theme-blackblue">Experimente orgasmos muito mais intensos e volumosos, eleve seu
+                      prazer a um nível que você sequer sabia que era possível. Você e sua parceria vão se surpreender!
+                    </p>
+                  </div>
+
+
+
+
+
+
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>-->
+
+
+
+
+
+
+  <!--<section class="beneficios.branco text-white">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row flex-column align-items-center justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h1 class="title-sec"><span class="bolder text-dark">RESULTADOS REAIS DE PESSOAS COMO VOCÊ!</span>
+            </h1>
+            <div class="clearfix"></div>
+
+            <div id="testimonial-carousel" class="owl-carousel owl-theme">
+
+
+              <div class="single-testi text-center item">
+                <div class="testi-img">
+                  <img src="assets1/img/antesdepois/antesdepois1.png" alt="testimonial image">
+                  
+                </div>
+
+              </div>
+
+              <div class="single-testi text-center item">
+                <div class="testi-img">
+                  <img src="assets1/img/antesdepois/antesdepois2.png" alt="testimonial image">
+                  
+                </div>
+
+              </div>
+
+              <div class="single-testi text-center item">
+                <div class="testi-img">
+                  <img src="assets1/img/antesdepois/antesdepois3.png" alt="testimonial image">
+                  
+                </div>
+
+              </div>
+
+              <div class="single-testi text-center item">
+                <div class="testi-img">
+                  <img src="assets1/img/antesdepois/antesdepois4.png" alt="testimonial image">
+                  
+                </div>
+
+              </div>
+
+
+
+
+
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="text-center">
+              <a href="#ofertas" class="btn btn-primary"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i>
+                Comprar Agora </a>
+
+              <br />
+              <br />
+              <img src="assets1/img/barra-compra-segura-1-1-1.png" style="filter: invert(100);" width="300px" alt="" />
+            </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+
+
+
+
+
+
+
+
+
+  <!--<section class="garantia bg-black text-white">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <h3 class="bolder theme-white">VEJA A OPINIÃO DE UM <span class="theme-red">ESPECIALISTA:</span></h3>
+            <div class="half"></div>
+            <p class="">“Sabemos que muitos homens sofrem com a temida disfunção erétil e é muito pelo estresse,
+              depressão, sobrepeso, vícios e muitas outras coisas que afetam a vida no dia a dia. Muitas vezes, para
+              tentar curar esse problema optam
+              por produtos errados, que além de não trazerem o resultado esperado, acabam com a saúde. Eu já vi casos de
+              homens desesperados, com o casamento acabado, chegando ao meu consultório em busca de ajuda, e não é só
+              homem velho não,
+              aparecem muitos rapazes novos também. Mas, depois de anos de estudos, encontramos a solução: TORO MAN!!
+              Fizemos pesquisas dentro e fora do país e chegamos em um resultado surpreendente: um produto 100% natural,
+              capaz de melhorar o
+              desempenho sexual e aumentar o tamanho e a largura do pênis. Por esses motivos, indico sem dúvidas a todos
+              os meus pacientes.”</p>
+          </div>
+
+          <div class="col-lg-5 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+
+            <img src="assets1/img/lab.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+  <!--<section class=" bg-white text-black">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <h2 class="bolder theme-black">O MELHOR PRODUTO PARA DEIXAR <span class="theme-red">SEU PÊNIS
+                GRANDÃO!</span></h2>
+            <div class="half"></div>
+            <h6><span class="ml-3 ml-0-m mt-m-10 text-oferta theme-black">Não tem nada pior para um homem do que quando
+                o clima começa a esquentar, os beijos começam a ficar mais intensos e bem na hora ‘h’ o pinto broxa. Sem
+                dúvidas, esse é um dos
+                piores pesadelos para qualquer homem, e então, muitos recorrem a ajuda do famoso “azulzinho”, sem saber
+                o perigo que escondem esses remédios de farmácia.
+                </br></br>
+
+
+                Nós temos a solução. Conheça TORO MAN, um produto 100% natural desenvolvido por especialistas para tratar
+                a disfunção erétil e para aumentar o tamanho do pênis. Só ele funciona perfeitamente para homens de
+                qualquer idade, sem causar
+                nenhum efeito colateral.
+
+
+              </span></h6>
+          </div>
+
+          <div class="col-lg-5 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+
+            <img src="assets1/img/modelo2.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+
+
+
+
+  <!--<section class="garantia bg-black text-white">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <h3 class="bolder theme-white">VEJA A SIMULAÇÃO AO <span class="theme-red">CONSUMIR O TORO MAN</span></h3>
+            <div class="half"></div>
+            <p class="">“Toro Man possui uma fórmula incrível que aumenta o pênis, estímulos, extrema melhora na ereção,
+              rigidez e várias outras melhorias.”</p>
+          </div>
+
+          <div class="col-lg-8 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+
+            <img src="assets1/img/ganho.gif" width="100%" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+
+
+
+
+
+
+
+  <!--<section class="depoimentos bg-red">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row flex-column align-items-center justify-content-center text-white">
+
+
+
+          <div class="col-md-8 col-lg-11">
+            <div class="card shadow bg-white p-30 w-100">
+              <div class="row align-items-center justify-content-around">
+
+
+
+                <h1 class="title-sec"><span class="bolder theme-red">Atenção!</span></h1>
+
+                <span class="ml-3 ml-0-m mt-m-10 text-oferta-black">Mesmo com a pandemia de<span class="bolder">
+                    COVID-19,</span> nossa entrega está garantida para todo o Brasil. </span>
+
+                <h1 class="title-sec"><span class="bolder theme-red">ENTREGA GARANTIDA</span></h1>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#232323" fill-opacity="1"
+        d="M0,32L60,26.7C120,21,240,11,360,26.7C480,43,600,85,720,90.7C840,96,960,64,1080,53.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+      </path>
+    </svg>
+  </section>-->
+
+
+
+
+
+
+  <!--<section class="garantia1 bg-black1 text-white" id="depoimentos">
+    <div class="wrapper">
+      <div class="container">
+
+
+        <h1 class="title-sec1 theme-white">Quem usou <span class="bolder theme-red">Toro Man,</span> Aprovou e Recomenda!
+        </h1>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="row align-items-start justify-content-center text-white">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+
+            <img src="assets1/img/depoimentos/dp1.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Tenho 51 anos e como de se esperar meu desempenho já não era o mesmo, minhas
+              ereções eram fracas e até meu pinto encolheu. Estava com medo de comprar algum produto e não funcionar,
+              mas para minha surpresa o Toro Man é a melhor coisa que já comprei. Meu pênis está maior, sexo é quase todo dia. Me sentindo um garotão! </p>
+            </br>
+            <h3 class=" theme-white">João P. - 51 anos</h3>
+          </div>
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <img src="assets1/img/depoimentos/dp2.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Eu e meu marido nos casamos há 8 anos. Passamos por tempos dificeis: ele começou
+              a sofrer com disfunção erétil e não queria saber de mim. Quando tentávamos fazer amor ele broxava ou
+              gozava muito rápido.
+              Brigamos muito por isso... Então, procurando soluções, achei Toro Man e logo já comprei, quando entreguei
+              para ele ficou super envergonhado, mas tudo isso acabou quando os resultados vieram: seu pênis ficou mais
+              grosso e o desempenho ta
+              100% melhor. Agora nossa vida sexual está maravilhosa. Se deixar ele quer todos os dias, toda hora! </p>
+            </br>
+            <h3 class=" theme-white">Carla L. - 30 anos</h3>
+          </div>
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <img src="assets1/img/depoimentos/dp3.jpg" width="150px" height="150px" class="capa-vd depo-round" alt="">
+            <div class="text-center">
+              <i class="fa fa-star theme-yellow ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+              <i class="fa fa-star theme-yellow  ml-1" aria-hidden="true"></i>
+
+            </div>
+            <div class="half"></div>
+            <p class="lead theme-white">Sempre tive o pênis grande e com ereções fortes, mas com o passar do tempo,
+              idade e correria do dia a dia, comecei a notar que as ereções eram cada dia mais curtas e também notei uma
+              diferença no tamanho do meu
+              pinto. Foi ai que resolvi procurar um médico especialista e ai ele me indicou o Toro Man!! Meus problemas
+              acabaram…rsrs Minhas ereções voltaram ao normal! Tem dia que parece que o pinto vai estourar de tão forte!
+              E sem falar que tanto em
+              tamanho como na grossura, ele ficou bem maior que antes. Toro Man foi minha salvação! </p>
+            </br>
+            <h3 class=" theme-white">Lucas S. - 25 anos</h3>
+          </div>
+
+
+
+
+
+
+
+          <div class="container">
+            <div class="text-center">
+              <a href="#ofertas" class="pulsingButton1 btn btn-red"><i class="fa fa-check-circle mr-2"
+                  aria-hidden="true"></i>Eu quero esses resultados!</a>
+
+
+
+              <img src="assets1/img/barra-compra-segura-1-1-1.png" width="250px" alt="">
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+
+
+
+
+
+
+
+
+
+ <!-- <section class="formula bg-white" id="">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row flex-column align-items-center justify-content-center text-white">
+
+          <div class="col-lg-5 text-center">
+            <h1 class="title-sec theme-black">Veja os <span class="bolder theme-red">bônus incríveis</span> que você
+              também vai receber.</h1>
+          </div>
+          <span class="ml-3 ml-0-m mt-m-10 text-oferta theme-black">Adquirindo qualquer <span class="bolder">Kit de
+              ToroMan você ganha mais 2 Ebooks exclusivos</span></span>
+
+
+
+          <div class="doublefix"></div>
+        </div>
+        <div class="row align-items-center justify-content-around">
+
+
+          <img data-aos="fade-right" data-aos-duration="800" class="img-fluid" src="assets1/img/noticias.png" alt="">
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row text-white align-items-start justify-content-center">
+
+
+
+
+
+
+          <div class="doublefix"></div>
+
+          <div class="text-center ">
+            <a href="#ofertas" class="btn btn-primary"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i>
+              Comprar
+              Agora </a>
+
+            <br><br>
+            <img class="" src="assets1/img/barra-compra-segura-1-1-1-black.png" width="250px">
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>-->
+
+
+
+
+
+
+
+
+
+
+  <section class="ofertas bg-black text-white" id="ofertas">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row flex-column align-items-center justify-content-center text-white">
+          <div class="col-lg-12 text-center">
+            <h1 class="title-sec theme-white">Oferta <span class="bolder theme-red">limitada</span></h1>
+            <h1 class="title-sec"> <span id="isthatClock1" class="bolder theme-red"></span></h1>
+            <span class="ml-3 ml-0-m mt-m-10 text-oferta theme-white">Escolha o kit ideal para você</span>
+
+          </div>
+          <div class="doublefix"></div>
+        </div>
+
+        <div class="row align-items-center justify-content-center">
+          <div class="clearfix"></div>
+
+          <div class="clearfix"></div>
+
+
+          <div class="row align-items-center flex-md-column flex-lg-row justify-content-center">
+
+
+            
+
+            
+
+            
+
+            <div class="col-md-8 col-lg-4 mt-m">
+              <div class="card1 shadow text-center" data-aos="fade-up">
+                <!--<img src="assets1/img/top20.png" width="100px" height="100px" class="selo-desconto" alt="">-->
+
+                <div class="card-produto p-30">
+
+                  <div class="clearfix"></div>
+
+
+                  <h4 class="text-white upper bolder">
+                    Leve 1 Pulsex&trade;
+                  </h4>
+
+                  <div class="half"></div>
+
+                  
+                  
+                  <a href=""> <img src="assets1/img/1.png" alt=""</a>
+
+
+                  <div class="clearfix"></div>
+
+                  <div class="oferta">
+                    <p class="text-black bolder antigo mb-2">
+                      de <strike>R$597,90</strike> por
+                    </p>
+
+                    <p class="lighter mb-0">
+                      12x de
+                    </p>
+
+                    <h4 class=" parcela bolder mb-0">
+                      R$ <span class="parcela-nova">13,20</span>
+                    </h4>
+
+                    <p class="a-vista">
+                      ou R$157,90 <span class="bolder">à vista</span>
+                    </p>
+
+                  </div>
+
+                  <div class="half"></div>
+
+                  <a target="_blank" href="https://pay.melldin.com" class="pulsingButton1 btn btn-green"> Comprar Agora </a>
+
+                  <div class="clearfix"></div>
+
+                  <img src="assets1/img/frete-gratis.png" alt="">
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="clearfix"></div>
+
+            <div class="card shadow bg-dark p-30 w-100">
+                <div class="row align-items-center justify-content-around">
+                  <!--<div class="col-lg-4 align-items-center d-flex flex-column flex-md-row text-center text-md-left"
+                    data-aos="fade-right">
+                    <img src="assets1/img/seguro/caps.png" width="56px" alt="">
+                    <span class="ml-3 ml-0-m mt-m-10 text-oferta">Cada pote contém <span class="bolder">60 cápsulas de
+                        Toro Man
+                      </span> </span>
+                  </div>-->
+
+                  <div class="col-lg-4 align-items-center d-flex flex-column flex-md-row text-center text-md-left mt-m "
+                    data-aos="fade-up">
+                    <img src="assets1/img/seguro/cartao.png" width="56px" alt="">
+                    <span class="ml-3 ml-0-m mt-m-10 text-oferta">Compre no boleto ou <span class="bolder">em até 12x
+                      </span> no cartão</span>
+                  </div>
+
+                  <div class="col-lg-4 align-items-center d-flex flex-column flex-md-row text-center text-md-left mt-m "
+                    data-aos="fade-right">
+                    <img src="assets1/img/seguro/safe.png" width="56px" alt="">
+                    <span class="ml-3 ml-0-m mt-m-10 text-oferta">Site seguro, <span class="bolder"> qualidade PulseX&trade;!
+                      </span> </span>
+                  </div>
+                </div>
+              </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="linha-red"></div>
+  </section>
+
+
+
+
+
+
+
+  <!--<section class=" text-white bg-change">
+    <div class="wrapper">
+      <div class="container">
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-8 col-lg-11">
+          <div class="card shadow bg-white p-30 w-100">
+            <div class="row align-items-center justify-content-around">
+              <h1 class="title-sec"><span class="bolder theme-red">Atenção!</span></h1>
+
+              <span class="theme-trust ml-3 ml-0-m mt-m-10 text-oferta">A venda do <span class="bolder">Toro Man</span>
+                só pode ser realizada através deste Site Oficial.<span class="bolder">
+                  Não vendemos em sites como:</span> </span>
+
+              <img class="img-fluid" src="assets1/img/antipirataria.png" alt="" />
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>-->
+
+  
+
+  <!--<section class="garantia bg-black text-white">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-4 text-center" data-aos="fade-up">
+            <img src="assets1/img/garantia.png" width="300px" alt="">
+          </div>
+
+          <div class="col-lg-5 text-center text-lg-left mt-m" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="bolder theme-white"><span class="theme-red">Satisfação garantida</span> ou seu dinheiro de volta.
+            </h3>
+            <div class="half"></div>
+            <p class="">Cansado de ser enganado com produtos que não funcionam? A gente te entende! Por saber disso, e
+              confiarmos na qualidade de nossa fórmula, nós damos <span class="bolder">30 dias para você testar o
+                PulseX&trade;</span>, se você não
+              gostar, devolvemos seu dinheiro!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<div class="linha-red"></div>-->
+
+
+
+
+
+
+  <section class="faq bg-black text-white" id="faq">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row flex-column justify-content-center align-items-center text-white">
+          <div class="col-lg-6 text-center">
+            <div class="text-center">
+              <h1 class="text-white title-sec">Ainda <span class="bolder theme-green">com dúvidas?</span></h1>
+            </div>
+          </div>
+
+          <div class="doublefix"></div>
+
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+              <div class="ac-holder">
+                <div class="half"></div>
+                <div class="accordion text-white pt-0">
+                  <div class="accordion-item active">
+                    <a class="bolder ac-link active" style="pointer-events: none;">QUANTO TEMPO LEVA PARA EU VER RESULTADOS?</a>
+                    <div class="content active">
+                      <p class="lead">
+                        Logo nas primeiras horas, você consegue perceber uma diferença. O melhor resultado virá depois dos 14 dias.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <a class="bolder ac-link active" style="pointer-events: none;">EU POSSO USAR A PULSEIRA DURANTE A PRÁTICA DO SEXO?</a>
+                    <div class="content active">
+                      <p class="lead">
+                        Sim, o ideal é você usar a todo momento. E tirar somente para tomar banho. E é justamente no relacionamento quente que você vai ver os resultados.
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div class="accordion-item">
+                    <a class="bolder ac-link active" style="pointer-events: none;">A PULSEX FUNCIONA MESMO?</a>
+                    <div class="content active">
+                      <p class="lead">
+                        Sim, a pulseira traz resultado rápido e é muito eficaz na hora do vamos ver.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <a class="bolder ac-link active" style="pointer-events: none;">POSSO BEBER CERVEJA?</a>
+                    <div class="content active">
+                      <p class="lead">
+                        Sim, Você pode usar bebidas alcoólicas sem problemas, não atrapalhará os resultados da Pulseira.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <a class="bolder ac-link active" style="pointer-events: none;">EXISTE ALGUMA CONTRA INDICAÇÃO?</a>
+                    <div class="content active">
+                      <p class="lead">
+                        Não existe contra indicação, qualquer homem pode usar. A Pulseira não acelera o coração e não prejudica quem tem diabetes, colesterol ou qualquer outro tipo de problema de saúde.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <a class="bolder ac-link active" style="pointer-events: none;">A PULSEIRA CHEGA EM QUANTOS DIAS?</a>
+                    <div class="content active ">
+                      <p class="lead">
+                        A Pulseira chega em aproximadamente 7 dias úteis, podendo variar alguns dias a mais e alguns menos. É totalmente seguro e anônimo, para que ninguém saiba o que você pediu. A plataforma de pagamento acessada usa a mesma tecnologia criptografada da Amazon e Bancos online para proteção de seus dados. Ninguém saberá que você comprou. A caixa enviada para sua casa é discreta, sem qualquer indícios da finalidade dela.
+                      </p>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="doublefix"></div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="linha-red"></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="main-footer page-footer text-center bg-black text-white">
+    <div class="pt-10 pb-20">
+      <div class="container">
+
+        <div class="clearfix"></div>
+
+
+
+        <div class="clearfix"></div>
+
+        <div class="row align-items-start justify-content-center">
+
+          <div class="col-lg-12 text-center">
+            <img src="assets1/img/LogoBranco@3x.png" width="100px" alt="">
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="col-lg-4 mt-m mb-m text-center" id="formas-pagamento">
+            <p class="bolder text-white mb-10">FORMAS DE PAGAMENTO:</p>
+            <img src="assets1/img/pagamento/master-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <img src="assets1/img/pagamento/visa-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <img src="assets1/img/pagamento/hiper-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <div class="half"></div>
+            <img src="assets1/img/pagamento/diners-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <img src="assets1/img/pagamento/aura-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <img src="assets1/img/pagamento/pag-boleto-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+			      <img src="assets1/img/pagamento/pix-1.png" style="filter: invert(100);" class="ml-2 mr-2" alt="">
+            <br>
+          </div>
+
+          <div class="col-lg-4 mt-m mb-m text-center">
+            <p class="bolder text-white mb-10">ENTREGA:</p>
+            <div class="text-center">
+              <img src="assets1/img/entrega.png"  alt="">
+            </div>
+
+
+            <div class="clearfix"></div>
+            
+
+          </div>
+
+
+          <div class="col-lg-4 mt-m mb-m text-center">
+            <!--<p class="bolder text-white mb-10">FABRICAÇÃO E DISTRIBUIÇÃO:</p>
+            <div class="text-center">
+              <img alt="" src="assets1/img/noxsupre1.png" width="150px" />
+
+
+              <h6 class="bolder mt-10 mb-0 text-white"> Laboratório Gileade Lab Ltda
+              </h6>
+
+              <p style="font-size: 10px; color: #f8f8f8;">CNPJ: 13.802.488/0001-12 <br> R. Henrique Wendt, Nº584 - Indústrias,</br>
+                Estrela - RS</p>
+
+            </div>-->
+			      <p class="bolder text-white mb-10">SEGURANÇA:</p>
+            <div class="text-center flex-row align-items-center">
+              <img src="assets1/img/selos-seg2.png" class="mr-3" width="140px" alt="">
+              <!--<img src="assets1/img/selo-seg3.svg" width="120px" alt="">-->
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="half"></div>
+
+
+        <div class="clearfix"></div>
+
+        <p class="text-grey rodape">
+          CNPJ: 42.784.119/0001-42<br>
+          <i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2022 - PulseX&trade; Todos os Direitos Reservados.
+          </br>
+          Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 ás 18h00. Lemos e respondemos todas as mensagens por ordem de chegada.<br><br>
+          <span class="small lighter lead"> <a href="termos.html">Termos de Uso </a> | <a href="politica.html">Políticas de Privacidade</a></span>
+        </p>
+      </div>
+    </div>
+
+    
+<a href="https://wa.me/5521997857614?text=olá%20preciso%20de%20ajuda%20com%20o%20PulseX" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
+  z-index:1000;" target="_blank">
+<i style="margin-top:16px" class="fa fa-whatsapp"></i>
+</a>
+  </footer>
+
+
+
+
+
+
+  <!-- ESSENCIAIS -->
+
+  <script>
+    /*$(document).ready(function () {
+      setTimeout(function () {
+        $(".owl-carousel").owlCarousel();
+      }, 2000);
+    });*/
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+
+  <!-- ANIMAÇÕES  -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- NAV TOP WHEN SCROLLED -->
+
+  <script>
+    /*var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-220px";
+      }
+      prevScrollpos = currentScrollPos;
+    };*/
+  </script>
+
+  <!-- OWL CAROUSEL -->
+
+  <script src="assets1/owlcarousel/js/owl.carousel.min.js"></script>
+
+  <script>
+    /*$(document).ready(function () {
+      $(".owl-carousel").owlCarousel();
+    });
+
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+      loop: true,
+      center: true,
+      rewind: true,
+      nav: true,
+      margin: 30,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        960: {
+          items: 3,
+        },
+      },
+    });*/
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on("click", function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $("html, body").animate({
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {}
+          );
+        } // End if
+      });
+    });
+  </script>
+
+  <!-- ANIMAÇÃO ACCORDIONS -->
+<!--<a href="https://api.whatsapp.com/send?phone=5521971907146&text=Ol%C3%A1%20quero%20solicitar%20o%20ToroMan%20%2C%20pode%20me%20ajudar%3F"><img src="https://i.imgur.com/ryESuZ5.png" style="height:40px; position:fixed; bottom: 25px; right: 25px; z-index:99999;"
+      data-selector="img"></a>-->
+  
+  <!-- NAV SCROLLED -->
+
+  <script>
+     // Code By Webdevtrick ( https://webdevtrick.com )
+    const items = document.querySelectorAll(".accordion a");
+
+    function toggleAccordion() {
+      this.classList.toggle("active");
+      this.nextElementSibling.classList.toggle("active");
+    }
+
+    items.forEach((item) => item.addEventListener("click", toggleAccordion));
+	
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".navbar");
+        $nav.toggleClass("scrolled shadow", $(this).scrollTop() > $nav.height());
+      });
+    });
+  </script>
+
+  <script>
+    $(".navbar-nav>a").on("click", function () {
+      $(".navbar-collapse").removeClass("show");
+    });
+  </script>
+  
+  <script language="JavaScript">
+    (function () {
+    var utmParamQueryString = new URLSearchParams(window.location.search);
+	
+    if (utmParamQueryString.toString()) {
+      var navLinks = document.querySelectorAll('a');
+      navLinks.forEach(function (item) {
+        // if (isPlatform(item.href) || true) {
+        if (!item.href.includes('#')) {
+          if (item.href.indexOf('?') === -1) {
+            item.href += '?' + utmParamQueryString.toString();
+          } else {
+            item.href += '&' + utmParamQueryString.toString();
+          }
+        }
+      });
+    }
+	
+  })();
+	
+</script>
+<style>
+        #botaocheckout{display:none;}
+        #comprasegura{display:none;}
+        //#elonmusk{display:none;}
+        //#composicao{display:none;}
+        //#depoimentos{display:none;}
+        #depoimentos-botao{display:none;}
+        #ofertas{display:none;}
+        //#faq{display:none;}
+        #formas-pagamento{display:none;}
+    </style>
+
+    <script src="assets1/js/Scripts.js"></script>
+
+
+        <script>
+var back_redirect_back_link = 'https://ojogadorbempago.com/hari/pull/sexoblog/';
+//if (extra_params!=null){
+  //back_redirect_back_link += '?' + extra_params.split('|').join('&');
+//}
+history['pushState']({}, '', location['href']);
+history['pushState']({}, '', location['href']);
+window['onpopstate'] = function() {
+setTimeout(function() {
+  location['href'] = back_redirect_back_link
+  }, 1)
+}</script>
+</body>
+
+</html>

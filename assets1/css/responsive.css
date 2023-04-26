@@ -1,0 +1,54 @@
+@media only screen and (max-width: 500px) and (min-width: 10px){
+
+	.h1-responsive{
+			font-size: 1.5em;
+		}
+
+		.title-off::after {
+			content: '';
+			width: 100px;
+			display: flex;
+			align-self: center;
+			margin: 0 auto;
+			margin-top: 5px;
+			height: 0px;
+			background: #ff001e;
+		}
+
+		.title-sec::after {
+			content: '';
+			width: 100px;
+			display: flex;
+			align-self: center;
+			margin: 0 auto;
+			margin-top: 5px;
+			height: 0px;
+			background: #ff001e;
+		}
+
+		.hero {
+			max-width: 100%;
+
+			min-height: 100vh;
+			background-color: #000;
+			/*background: url(../img/bg-hero1.png);*/
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		.hero1 {
+			max-width: 100%;
+
+			min-height: 100vh;
+			background: url(../img/potes1.png);
+			background-attachment: fixed;
+			background-size: cover;
+		}
+		.navbutton{
+			margin-left: -50px;
+		}
+		.garantia1 {
+		  
+
+		}
+
+}
